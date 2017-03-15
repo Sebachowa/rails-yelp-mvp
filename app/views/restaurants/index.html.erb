@@ -1,12 +1,17 @@
-<h1>My shitty restaurants list:</h1>
+<h1 class="title text-center">My shitty restaurants list</h1>
 
-<ul>
-  <% @restaurants.each do |restaurant| %>
-    <li>
-      <p>Name: <%=restaurant.name%></p>
-      <p>Address: <%=restaurant.address%></p>
-      <p>Phone number: <%=restaurant.phone_number%></p>
-      <p>Category: <%=restaurant.category%></p>
-    </li>
-  <% end %>
-</ul>
+  <div class="row">
+    <% @restaurants.each do |resto| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="card-resto text-center">
+          <h4><%=resto.name%></h4>
+          <p><%=resto.category.capitalize%> Restorant</p>
+          <p><%=resto.address%></p>
+          <p>Phone: <%=resto.phone_number%></p>
+          <div class="button-container">
+            <%= link_to "Details", restaurant_path(resto), class: "btn btn-seb" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
