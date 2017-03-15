@@ -3,12 +3,20 @@
   <head>
     <title>RailsYelpMvp</title>
     <%= csrf_meta_tags %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <div class="navbar-wagon">
+      <!-- Logo -->
+      <%= link_to "Shitty List", restaurants_path, class: "navbar-wagon-brand" %>
+
+      <!-- Button (call-to-action) -->
+      <%= link_to t(".top_call_to_action", default: "New Restaurant"), new_restaurant_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+    </div>
     <%= yield %>
   </body>
 </html>
